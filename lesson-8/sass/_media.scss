@@ -1,0 +1,29 @@
+@import "vars";
+
+@media all and (max-width: 700px) {
+    .main-menu, .background-nav-menu, .user-photo span {
+        display: none;
+    }
+    .users-menu {
+        margin-right: 7vh;
+        ul {
+            li {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    .position-footer {
+        margin: 0;
+    }
+    .about-project, .footer-navigation ul, .title-block {
+        justify-content: center;
+    }
+    .menu-mob {
+        display: block;
+    }
+    .position-menu {
+        display: flex;
+    }
+}
