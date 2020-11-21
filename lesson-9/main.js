@@ -5,7 +5,7 @@ function Animal(name) {
     var foodAmount = 50;
 
     function formatFoodAmount() {
-        return self.foodAmount + ' гр.';
+        return foodAmount + ' гр.';
     }
 
     self.dailyNorm = function(amount) {
@@ -25,7 +25,7 @@ function Animal(name) {
     };
 }
 
-function Cat() {
+function Cat(name) {
     Animal.apply(this, arguments);
 
     var animalFeed = this.feed;  
