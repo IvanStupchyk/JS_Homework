@@ -2,7 +2,7 @@ function Animal(name) {
     var self = this;
 
     self.name = name;
-    self.foodAmount = 50;
+    var foodAmount = 50;
 
     function formatFoodAmount() {
         return self.foodAmount + ' гр.';
@@ -15,7 +15,7 @@ function Animal(name) {
             return 'Недопустимое количество корма.';
         }
 
-        self.foodAmount = amount;
+        foodAmount = amount;
     };
 
     self.feed = function() {
@@ -52,7 +52,12 @@ console.log(barsik.name);
 
 console.log(barsik.dailyNorm());
 console.log(barsik.feed());
-console.log(barsik.stroke().feed());
 
+console.log(barsik.dailyNorm(600));
+console.log(barsik.feed());
+
+console.log(barsik.dailyNorm(250));
+console.log(barsik.feed());
+console.log(barsik.stroke().feed());
 
 barsik = null;
