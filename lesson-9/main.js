@@ -32,6 +32,7 @@ function Cat(name) {
     this.feed = function() {
         animalFeed();
         this.happyCat();
+        return this;
     };
     
     this.happyCat = function() {
