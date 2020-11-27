@@ -566,11 +566,11 @@ h1 span {
 }
 .nav-menu ul li a {
   color: #fff;
+  padding-top: 9px;
   border-top: 3px solid #646d81;
 }
 .nav-menu ul li a:hover {
   border-top-color: #fff;
-  padding-top: 9px;
   transition: 0.2s;
 }
 .nav-menu ul li a:focus {
@@ -785,7 +785,7 @@ h1 span {
 }
 
 .position-footer {
-  margin-left: 22.7vh;
+  margin-left: 171px;
 }
 
 .footer-navigation {

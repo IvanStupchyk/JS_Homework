@@ -192,10 +192,10 @@ transition-duration: 0.5s;
             margin-right: 4vh;
             a {
                 color: #fff;
+                padding-top: 9px;
                 border-top: 3px solid #646d81;
                 &:hover {
                     border-top-color: #fff;
-                    padding-top: 9px;
                     transition: 0.2s;
                 }
                 &:focus {
@@ -423,7 +423,7 @@ transition-duration: 0.5s;
 }
 
 .position-footer {
-    margin-left: 22.7vh;
+    margin-left: 171px;
 }
 
 .footer-navigation {
