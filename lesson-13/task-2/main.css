@@ -11,11 +11,9 @@ tbody {
     text-align: center;
 }
 
-
-
 td {
     width: 200px;
-    padding: 2px;
+    padding: 5px;
     box-sizing: border-box;
     height: 40px;
 }

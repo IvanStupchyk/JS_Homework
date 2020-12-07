@@ -13,7 +13,6 @@ var btnCollection = document.getElementsByTagName('button');
     btn = btnCollection[0];
 
 btn.addEventListener('click', function (evt) {
-    
     for (var i = 0; i < firstPar.children.length; i++) {
         firstPar.children[i].classList.add('color-link');
     }

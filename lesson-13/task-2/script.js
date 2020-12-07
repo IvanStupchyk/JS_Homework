@@ -2,6 +2,10 @@ var addRow = document.getElementById('addNewRow'),
     table = document.getElementsByTagName('tbody'),
     tableEl = table[0];
 
+var input = document.createElement('input');
+input.setAttribute('type', 'text');
+input.setAttribute('maxlength', '18');
+
 
 tableEl.addEventListener('click', function (event) {
     var target = event.target;
@@ -9,31 +13,29 @@ tableEl.addEventListener('click', function (event) {
     if (target.textContent == 'ADD ROW') {
         var trNew = document.createElement('tr');
         trNew.innerHTML = '<td></td><td></td><td></td>';
+
         tableEl.insertBefore(trNew, tableEl.firstElementChild);
     }
 
     if (target.tagName == 'TD' && target.textContent != 'ADD ROW') {
-        var input = '<input type = "text">';
-        
-        
-        target.innerHTML = input;
-        // inputTag.value = target.textContent;
-        var inputTag = target.firstElementChild;
-        inputTag.focus();
+        input.value = target.textContent;
+        target.textContent = '';
+        target.appendChild(input);
+        input.focus();
     }
 
-    inputTag.onblur = function () {
-        target.innerHTML = inputTag.value;
+    input.onblur = function () {
+        target.innerHTML = input.value;
     }
-    
-    inputTag.addEventListener('keydown', function (event) {
-        var target = event.target;
+});
 
-        if (event.keyCode === 13) {
-            target.textContent = inputTag.value;
-            inputTag.blur();
-        }
-    });
+input.addEventListener('keydown', function (event) {
+    var target = event.target;
+
+    if (event.keyCode === 13) {
+        target.textContent = input.value;
+        input.blur();
+    }
 });
 
 
