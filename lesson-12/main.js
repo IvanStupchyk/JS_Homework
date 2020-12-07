@@ -2,7 +2,7 @@
 
 function changeArr(names) {
     return names.map(function(item) {
-        return item = { name: item };
+        return { name: item };
     });
 }
       
@@ -12,9 +12,9 @@ changeArr(['Vasia', 'Petia']);
 // task-2
 
 function currentTime(arr) {
-    return arr.reduce(function(previousValue, currentItem, index) {
-        return 'Текущее время: ' + arr[index - 2] + ' : ' + arr[index - 1] + ' : ' + arr[index] ;
-    });
+    return arr.reduce(function(previousValue, currentItem) {
+        return previousValue + ' : ' + currentItem;
+    },'Текущее время');
 }
      
 currentTime(['00', '13', '24']);
@@ -22,20 +22,21 @@ currentTime(['00', '13', '24']);
 
 // task-3
 
-function amountVowels (line) {
+function amountVowels(line) {
     var strArr = line.split(''), 
-        vowels = "аеёиоуыэюя";
- 
-    return strArr.reduce(function(sum, val) {
-       if (vowels.indexOf(val) !== -1) { 
-            sum++; 
+        vowels = "аеёиоуыэюя",
+        sum = 0;
+
+    strArr.forEach(function(item, i) {
+       if (vowels.indexOf(item) !== -1) { 
+            sum += 1;  
        }
-       return sum; 
-    }, 0); 
+    }); 
+
+    return sum;
 }
 
 amountVowels('ывваё');
-
 
 // task-4 
 
@@ -44,22 +45,24 @@ function countingLetters(line) {
 
     var amountLetters = arr.map(function(item, i) {
         var arrLetters = item.toLowerCase().split(''),
-            vowels = "йцукенгшщзхъфывапролджэячсмитьбю";
+            vowels = "йцукенгшщзхъфывапролджэячсмитьбю",
+            sum = 0;
+         
+        arrLetters.forEach(function(item, i) {
+            if (vowels.indexOf(item) !== -1) { 
+                sum += 1; 
+            }            
+        });
 
-        return arrLetters.reduce(function(sum, val) {
-            if (vowels.indexOf(val) !== -1) { 
-                sum++; 
-            }
-            return sum; 
-        }, 0); 
+        return sum; 
     });
 
-    console.log(arr[0] + ': Letters quantity is: ' + amountLetters[0]);
-    console.log(arr[1].trim() + ': Letters quantity is: ' + amountLetters[1]);
-    console.log(arr[2].trim() + ': Letters quantity is: ' + amountLetters[2]);
+    arr.forEach(function(item, i) {
+        console.log(arr[i].trim() + ': Letters quantity is: ' + amountLetters[i]);
+    });
 }
   
-countingLetters('Привет, студент! Студент... Как дела, студент?');
+countingLetters('Привет, студент! Студент... Как дела, студент');
 
 
 // task-5
@@ -81,4 +84,4 @@ function wordCount(line) {
     }
 }
   
-countingLetters('Привет укпукп, во во студент! рис рис рис рис рис Студент... Как дела, студент?');
+wordCount('Привет укпукп, во во студент! рис рис рис рис рис Студент... Как дела, студент?');
