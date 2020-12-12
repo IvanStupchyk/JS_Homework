@@ -1,0 +1,36 @@
+ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+    width: 100%;
+}
+
+span {
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+li {
+    margin-bottom: 2vh;
+    list-style-type: none;
+    display: flex;
+}
+
+li:nth-last-child(1) {
+    margin-left: 3.4vh;
+}
+
+table, td {
+    border: 1px solid #000;
+    border-spacing: 0;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+}
+
+.black {
+    background-color: #000;
+}
